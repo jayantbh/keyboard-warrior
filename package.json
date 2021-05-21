@@ -1,0 +1,37 @@
+{
+  "name": "keyboard-warrior",
+  "version": "1.0.0",
+  "description": "A real-time collaborative-multiplayer space-invaders clone",
+  "repository": "https://github.com/jayantbh/shared-canvas",
+  "author": "Jayant Bhawal <bhawal.jayant@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.14.2",
+    "@babel/eslint-parser": "^7.14.2",
+    "@babel/eslint-plugin": "^7.13.16",
+    "@parcel/transformer-sass": "2.0.0-beta.2",
+    "concurrently": "^6.0.2",
+    "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "hbs": "^4.1.2",
+    "parcel": "^2.0.0-beta.2",
+    "pg": "^8.6.0"
+  },
+  "dependencies": {
+    "dotenv": "^9.0.0",
+    "express": "^4.17.1",
+    "melonjs": "^8.0.1",
+    "node-fetch": "^2.6.1",
+    "socket.io": "^4.0.2"
+  },
+  "scripts": {
+    "build-pages": "parcel build src/*.html",
+    "watch-pages": "parcel watch src/*.html",
+    "node-server": "node index.js",
+    "watch-server": "nodemon index.js",
+    "clean": "rm -rf .parcel-cache .cache dist",
+    "start": "concurrently \"yarn watch-pages\" \"yarn watch-server\"",
+    "build": "yarn build-pages"
+  }
+}
